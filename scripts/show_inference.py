@@ -18,8 +18,8 @@ from nanodet.util import cfg, load_config, Logger
 from nanodet.util import overlay_bbox_cv
 
 # %%
-config_path = '/home/visnet/git/nanodet/config/nanodet-plus-m-1.5x_416-cf.yml'
-model_path = '/home/visnet/git/nanodet/trained/nanodet_model_best.pth'
+config_path = '/home/visnet/catkin/src/visnet/nanodet/config/nanodet-plus-m-1.5x_416-cf.yml'
+model_path = '/home/visnet/catkin/src/visnet/nanodet/trained/nanodet_model_best.pth'
 load_config(cfg, config_path)
 logger = Logger(-1, use_tensorboard=False)
 
@@ -32,6 +32,7 @@ if not cap.isOpened():
 while (cap.isOpened()):
     ret, frame = cap.read()
     if ret == True:
+        print("getting a frame")
         # result = frame
         meta, res = predictor.inference(frame)
         result = overlay_bbox_cv(meta["raw_img"][0], res[0], cfg.class_names, score_thresh=0.35)

@@ -117,3 +117,9 @@ work_dirs/
 *.pth
 *.py~
 *.sh~
+
+# other data
+trained/
+data/
+coco/
+*logs.txt

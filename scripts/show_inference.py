@@ -18,8 +18,8 @@ from nanodet.util import cfg, load_config, Logger
 from nanodet.util import overlay_bbox_cv
 
 # %%
-config_path = '/home/visnet/git/nanodet/config/nanodet-plus-m-1.5x_416-cf.yml'
-model_path = '/home/visnet/git/nanodet/trained/nanodet_model_best.pth'
+config_path = '../config/nanodet-plus-m-1.5x_416-cf.yml'
+model_path = '../trained/nanodet_model_best.pth'
 load_config(cfg, config_path)
 logger = Logger(-1, use_tensorboard=False)
 
